@@ -43,7 +43,7 @@ for (const file of mdFiles) {
 
     const display = alias || docName
     const anchorPart = anchor ? `#${anchor.toLowerCase().replace(/\s+/g, '-')}` : ''
-    const url = `/${docName}${anchorPart}`
+    const url = `/robotics-learning-map/${docName}${anchorPart}`
     modified = true
     return `[${display}](${url})`
   })
@@ -51,6 +51,35 @@ for (const file of mdFiles) {
   if (modified) {
     await writeFile(filepath, content, 'utf-8')
     console.log(`  ✓ ${file}`)
+  }
+
+  // Second pass: fix hardcoded absolute internal links like [text](/docName) → [text](/base/docName)
+  const absoluteLinkRe = /\[([^\]]*)\]\(\/([^)\s]+)\)/g
+  content = content.replace(absoluteLinkRe, (match, text, path) => {
+    // Skip external URLs (shouldn't match since they start with http, but be safe)
+    if (path.startsWith('http')) return match
+
+    const [docName, anchor] = path.split('#')
+    const anchorSuffix = anchor ? `#${anchor}` : ''
+
+    // Root link "/"
+    if (docName === '') {
+      modified = true
+      return `[${text}](/robotics-learning-map/${anchorSuffix})`
+    }
+
+    // Known internal doc
+    if (knownDocs.has(docName)) {
+      modified = true
+      return `[${text}](/robotics-learning-map/${docName}${anchorSuffix})`
+    }
+
+    return match
+  })
+
+  if (modified) {
+    await writeFile(filepath, content, 'utf-8')
+    console.log(`  ✓ ${file} (internal links fixed)`)
   }
 }
 

@@ -18,6 +18,7 @@ export default defineConfig({
   title: '具身操作基础模型 · 学习地图',
   description: 'Flow Matching + MoT + SE(3) + 力触觉 + 灵巧手 — 从基础到系统',
   lang: 'zh-CN',
+  base: '/robotics-learning-map/',
   ignoreDeadLinks: true,
 
   head: [['script', {}, antiFouc]],

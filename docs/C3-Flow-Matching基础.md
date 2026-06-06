@@ -196,6 +196,6 @@ class FlowMatching(nn.Module):
 
 ## 🔗 相关笔记
 
-- [M1-Riemannian-FM与SE3生成](/M1-Riemannian-FM与SE3生成) — FM 从 R^d 搬到 SE(3)（FM #2）
-- [I1-系统架构与部署](/I1-系统架构与部署) — FM 蒸馏到实时（FM #3）
-- [写作工具箱](/写作工具箱)
+- [M1-Riemannian-FM与SE3生成](/robotics-learning-map/M1-Riemannian-FM与SE3生成) — FM 从 R^d 搬到 SE(3)（FM #2）
+- [I1-系统架构与部署](/robotics-learning-map/I1-系统架构与部署) — FM 蒸馏到实时（FM #3）
+- [写作工具箱](/robotics-learning-map/写作工具箱)

@@ -196,7 +196,7 @@ FM 策略：     x₀ = 当前位姿 + 噪声  →  ODE →  x₁ = 未来位姿
 
 ### L3 设计性写作
 
-→ 写到 [I4-累积设计文档](/I4-累积设计文档) Section 2：你的 SE(3) + 力联合生成方案
+→ 写到 [I4-累积设计文档](/robotics-learning-map/I4-累积设计文档) Section 2：你的 SE(3) + 力联合生成方案
 
 ---
 
@@ -209,8 +209,8 @@ FM 策略：     x₀ = 当前位姿 + 噪声  →  ODE →  x₁ = 未来位姿
 
 ## 🔗 相关笔记
 
-- [C2-SE3几何入门](/C2-SE3几何入门) — SE(3) 的几何基础
-- [C3-Flow-Matching基础](/C3-Flow-Matching基础) — FM #1（欧氏空间）
-- [I1-系统架构与部署](/I1-系统架构与部署) — FM #3（蒸馏部署）
-- [I4-累积设计文档](/I4-累积设计文档) — L3 输出写到这里
-- [写作工具箱](/写作工具箱)
+- [C2-SE3几何入门](/robotics-learning-map/C2-SE3几何入门) — SE(3) 的几何基础
+- [C3-Flow-Matching基础](/robotics-learning-map/C3-Flow-Matching基础) — FM #1（欧氏空间）
+- [I1-系统架构与部署](/robotics-learning-map/I1-系统架构与部署) — FM #3（蒸馏部署）
+- [I4-累积设计文档](/robotics-learning-map/I4-累积设计文档) — L3 输出写到这里
+- [写作工具箱](/robotics-learning-map/写作工具箱)
