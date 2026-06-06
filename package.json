@@ -1,0 +1,14 @@
+{
+  "name": "embodied-learning-map",
+  "version": "1.0.0",
+  "description": "具身操作基础模型学习地图",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "node scripts/convert-links.mjs && vitepress build docs",
+    "preview": "vitepress preview docs",
+    "convert": "node scripts/convert-links.mjs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}

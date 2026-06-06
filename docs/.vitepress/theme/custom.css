@@ -1,0 +1,58 @@
+/* 具身学习地图 — 自定义样式 */
+
+:root {
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+  --vp-c-brand-1: #4f8c8c;
+  --vp-c-brand-2: #3d7a7a;
+  --vp-c-brand-3: #2e5e5e;
+}
+
+.dark {
+  --vp-c-brand-1: #6db3b3;
+  --vp-c-brand-2: #5a9e9e;
+  --vp-c-brand-3: #4a8a8a;
+}
+
+/* 让 checkbox 任务列表好看一些 */
+.vp-doc input[type="checkbox"] {
+  accent-color: var(--vp-c-brand-1);
+}
+
+/* 代码块更紧凑 */
+.vp-doc div[class*='language-'] {
+  margin: 1em 0;
+}
+
+/* 表格在小屏幕上可滚动 */
+.vp-doc table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* 强调 "先读 3 篇" */
+.vp-doc strong:has(+ em) {
+  color: var(--vp-c-brand-1);
+}
+
+/* ===== 左侧边栏收起 ===== */
+html.hide-sidebar .VPSidebar {
+  display: none !important;
+}
+html.hide-sidebar .VPContent.has-sidebar {
+  padding-left: 0 !important;
+}
+
+/* ===== 右侧目录收起 ===== */
+html.hide-aside .VPDoc.has-aside .aside {
+  display: none !important;
+}
+html.hide-aside .VPDoc.has-aside .container {
+  margin-right: 0 !important;
+}
+
+/* 收起过渡动画 */
+.VPSidebar,
+.VPContent.has-sidebar,
+.VPDoc.has-aside .aside {
+  transition: all 0.25s ease;
+}
