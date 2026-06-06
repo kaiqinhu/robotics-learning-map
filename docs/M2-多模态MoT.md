@@ -1,12 +1,47 @@
 # 🟡 M2-多模态 MoT (Mixture of Transformers)
 
-> **核心问题：** 视觉(30Hz, 高维)、力觉(1000Hz, 6D)、触觉(60Hz, 图像)、位姿(100Hz, 6D)、语言(离散)——不同模态信息密度差异悬殊。一个 Dense Transformer 让所有 token 共享参数 → 视觉挤占语言、力觉被稀释。**MoT 给每种模态独立的 Transformer 参数**，稀疏激活，互不干扰。
->
 > **预计时间：** 2 周
 >
 > **状态：** 📝 待学习
 
 ---
+
+## 背景：多模态不是"拼积木"
+
+机器人策略的输入不是一张图+一句话——它是五路完全不同的信号：
+```
+视觉    30Hz   高维像素      → 场景里有什么
+力觉   1000Hz   6D wrench    → 接触力多大、什么方向
+触觉    60Hz   触觉图像      → 滑不滑、什么材质
+位姿   100Hz   6D SE(3)      → 手在哪、目标在哪
+语言   离散    token序列     → 任务是什么
+```
+
+把这五路信号塞进一个 Dense Transformer？视觉 token 有几百个，力觉 token 只有一两个——**高维视觉会把低维力觉完全淹没。** 这就是为什么传统 VLM 做 robot policy "看图厉害，动作不准"。
+
+**MoT (Mixture of Transformers)** 是 2024-2026 年间出现的关键解法：不给所有模态共享一套参数，而是每个模态拥有独立的 QKV、FFN、LayerNorm。它不是 MoE（在 FFN 里选 expert），而是在 **Block 级** 做模态分家。
+
+Meta 提出了框架，NVIDIA Cosmos 3 用它做了全模态世界模型，腾讯 HY-Embodied 用它做了具身 VLA。你的模型也需要一个 MoT backbone。
+
+## 学完这一页你能
+
+- 用一句话区分 MoT 和 MoE（Block 级 vs FFN 级；确定性模态 mask vs 学习的 Router）
+- 画出 MoT 的架构图：每个模态的 QKV+FFN+LN 各自独立，全局 attention 共享
+- 解释为什么 MoT 天然适合具身多模态——频率对齐、模态隔离、力觉不被视觉稀释
+- 说出 Cosmos 3 双塔的单向注意力设计及其原因
+- 设计你自己的 MoT 方案：哪些模态独立 Transformer？cross-attention 在哪几层？
+
+## 核心驱动问题
+
+1. **MoT 和 MoE 到底差在哪？** 为什么说 MoE 是 FFN 级、MoT 是 Block 级？确定性模态 mask 和学习 Router 的本质区别是什么？
+2. **为什么视觉 token 会"挤占"力觉 token 的参数空间？** 频率不同、维度不同、信息密度不同——这三个"不同"各自造成什么后果？
+3. **Cosmos 3 为什么设计成单向注意力（AR→DM）？** AR token 不被 DM token 更新——这个设计在机器人策略里需要吗？
+4. **MoT 的消融实验说 FFN 解耦贡献最大、QKV 第二、LN 最小——对你的设计有什么启示？** 如果算力紧，先分什么？
+5. **在你的场景里，力觉 token 只有 1-2 个——给它们独立 QKV 性价比高吗？** 还是共享 QKV + 独立 FFN 就够了？
+
+---
+
+> **核心问题：** 视觉(30Hz, 高维)、力觉(1000Hz, 6D)、触觉(60Hz, 图像)、位姿(100Hz, 6D)、语言(离散)——不同模态信息密度差异悬殊。一个 Dense Transformer 让所有 token 共享参数 → 视觉挤占语言、力觉被稀释。**MoT 给每种模态独立的 Transformer 参数**，稀疏激活，互不干扰。
 
 ## 1. MoT 不是 MoE
 
