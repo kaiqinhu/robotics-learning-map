@@ -69,4 +69,4 @@
 
 ---
 
-[回首页](/robotics-learning-map/)
+[回首页](/)

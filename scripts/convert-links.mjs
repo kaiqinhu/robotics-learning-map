@@ -43,7 +43,7 @@ for (const file of mdFiles) {
 
     const display = alias || docName
     const anchorPart = anchor ? `#${anchor.toLowerCase().replace(/\s+/g, '-')}` : ''
-    const url = `/robotics-learning-map/${docName}${anchorPart}`
+    const url = `/${docName}${anchorPart}`
     modified = true
     return `[${display}](${url})`
   })
@@ -65,13 +65,13 @@ for (const file of mdFiles) {
     // Root link "/"
     if (docName === '') {
       modified = true
-      return `[${text}](/robotics-learning-map/${anchorSuffix})`
+      return `[${text}](/${anchorSuffix})`
     }
 
     // Known internal doc
     if (knownDocs.has(docName)) {
       modified = true
-      return `[${text}](/robotics-learning-map/${docName}${anchorSuffix})`
+      return `[${text}](/${docName}${anchorSuffix})`
     }
 
     return match

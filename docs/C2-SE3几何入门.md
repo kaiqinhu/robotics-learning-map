@@ -180,6 +180,6 @@ log: SE(3) → se(3)
 
 ## 🔗 相关笔记
 
-- [C1-经典机器人学](/robotics-learning-map/C1-经典机器人学) — 运动学的 SE(3) 基础
-- [M1-Riemannian-FM与SE3生成](/robotics-learning-map/M1-Riemannian-FM与SE3生成) — 在 SE(3) 上做 FM（进阶）
-- [写作工具箱](/robotics-learning-map/写作工具箱)
+- [C1-经典机器人学](/C1-经典机器人学) — 运动学的 SE(3) 基础
+- [M1-Riemannian-FM与SE3生成](/M1-Riemannian-FM与SE3生成) — 在 SE(3) 上做 FM（进阶）
+- [写作工具箱](/写作工具箱)

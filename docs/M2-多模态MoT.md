@@ -427,7 +427,7 @@ MoT 天然解决频率问题——因为各模态独立：
 
 ### L3 设计性写作
 
-→ 写到 [I4-累积设计文档](/robotics-learning-map/I4-累积设计文档) Section 3：你的多模态 MoT 融合架构
+→ 写到 [I4-累积设计文档](/I4-累积设计文档) Section 3：你的多模态 MoT 融合架构
 
 ---
 
@@ -441,9 +441,9 @@ MoT 天然解决频率问题——因为各模态独立：
 
 ## 🔗 相关笔记
 
-- [M1-Riemannian-FM与SE3生成](/robotics-learning-map/M1-Riemannian-FM与SE3生成) — FM Head 接在 Transformer 后面
-- [M3-触觉表征与力预测](/robotics-learning-map/M3-触觉表征与力预测) — 触觉/力 encoder 设计
-- [I4-累积设计文档](/robotics-learning-map/I4-累积设计文档)
-- [写作工具箱](/robotics-learning-map/写作工具箱)
+- [M1-Riemannian-FM与SE3生成](/M1-Riemannian-FM与SE3生成) — FM Head 接在 Transformer 后面
+- [M3-触觉表征与力预测](/M3-触觉表征与力预测) — 触觉/力 encoder 设计
+- [I4-累积设计文档](/I4-累积设计文档)
+- [写作工具箱](/写作工具箱)
 - 📄 下载: `docs/Papers/Mixture-of-Transformers-Meta-TMLR2025.pdf`
 - 📄 下载: `docs/Papers/Cosmos3-Omnimodal-World-Models-2026.pdf`
