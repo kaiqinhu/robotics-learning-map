@@ -60,6 +60,7 @@ export default defineConfig({
         ]
       },
       { text: '📡 最新进展', link: '/最新进展-2025-2026' },
+      { text: '📝 更新日志', link: '/changelog' },
       { text: '许可与联系', link: '/license' },
     ],
 
@@ -67,6 +68,7 @@ export default defineConfig({
       { text: '🗺️ 入口', items: [
         { text: '总览·学习地图', link: '/' },
         { text: '写作工具箱', link: '/写作工具箱' },
+        { text: '更新日志', link: '/changelog' },
         { text: '许可与联系', link: '/license' },
       ]},
       { text: '🔴 Core 核心层', collapsed: false, items: [
