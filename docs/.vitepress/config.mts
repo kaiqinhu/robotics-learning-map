@@ -60,16 +60,11 @@ export default defineConfig({
         ]
       },
       { text: '📡 最新进展', link: '/最新进展-2025-2026' },
-      { text: '📝 更新日志', link: '/changelog' },
-      { text: '许可与联系', link: '/license' },
     ],
 
     sidebar: [
       { text: '🗺️ 入口', items: [
         { text: '总览·学习地图', link: '/' },
-        { text: '写作工具箱', link: '/写作工具箱' },
-        { text: '更新日志', link: '/changelog' },
-        { text: '许可与联系', link: '/license' },
       ]},
       { text: '🔴 Core 核心层', collapsed: false, items: [
         { text: 'C0 动作生成范式全景', link: '/C0-动作生成范式全景' },
@@ -94,6 +89,11 @@ export default defineConfig({
       { text: '📡 前沿与交流', collapsed: false, items: [
         { text: '最新进展 2025-2026', link: '/最新进展-2025-2026' },
         { text: '交流记录与洞察', link: '/10-交流记录与洞察' },
+      ]},
+      { text: '', items: [
+        { text: '写作工具箱', link: '/写作工具箱' },
+        { text: '更新日志', link: '/changelog' },
+        { text: '许可与联系', link: '/license' },
       ]},
     ],
 
