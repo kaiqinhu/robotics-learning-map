@@ -59,13 +59,15 @@ export default defineConfig({
           { text: 'I4 · 累积设计文档', link: '/I4-累积设计文档' },
         ]
       },
-      { text: '最新进展', link: '/最新进展-2025-2026' },
+      { text: '📡 最新进展', link: '/最新进展-2025-2026' },
+      { text: '许可与联系', link: '/license' },
     ],
 
     sidebar: [
       { text: '🗺️ 入口', items: [
         { text: '总览·学习地图', link: '/' },
         { text: '写作工具箱', link: '/写作工具箱' },
+        { text: '许可与联系', link: '/license' },
       ]},
       { text: '🔴 Core 核心层', collapsed: false, items: [
         { text: 'C0 动作生成范式全景', link: '/C0-动作生成范式全景' },
